@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
-import {defaultState} from '../../server/defaultState';
+import {defaultState} from '../../server/default-state';
 import { createLogger } from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 

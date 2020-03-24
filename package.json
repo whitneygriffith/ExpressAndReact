@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack",
-    "dev": "webpack-dev-server --open"
+    "dev": "webpack-dev-server --open",
+    "initialize": "babel-node src/server/initialize-db"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
     "@babel/register": "^7.9.0",
     "babel-loader": "^8.1.0",
     "history": "^4.10.1",
+    "mongodb": "^3.5.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
