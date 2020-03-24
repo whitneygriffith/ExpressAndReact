@@ -1,20 +1,22 @@
 import React from  'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import * as mutations from '../store/mutations';
 
 const TaskDetail = ({
     id,
     comments,
     task,
     isComplete,
-    groups
+    groups,
+    setTaskCompletion
 }) => (
     <div>
         <div>
             <input value={task.name}/>
         </div>
         <div>
-            <button> Complete / Reopen Task </button>
+            <button onClick={ () => setTaskCompletion(id, !isComplete)}> { isComplete ? 'Reopen' : 'Complete'} </button>
         </div>
         <div>
             <select>
@@ -44,4 +46,13 @@ const mapStateToProps = (state, ownProps) => {
     }
 };
 
-export const ConnectedTaskDetail = connect(mapStateToProps)(TaskDetail);
+const mapDispatchToProps = (dispatch, ownProps) => {
+    const id = ownProps.match.params.id;
+    return {
+        setTaskCompletion(id, isComplete){
+            dispatch(mutations.setTaskCompletion(id, isComplete));
+        }
+    }
+};
+
+export const ConnectedTaskDetail = connect(mapStateToProps, mapDispatchToProps)(TaskDetail);
