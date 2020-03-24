@@ -8,4 +8,6 @@
 
 ### Frontend 
 
+*Webpack, Babel, React, Redux*
+
 ![Frontend](./docs/images/frontend.png)
