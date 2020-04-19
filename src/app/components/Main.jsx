@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {  Provider } from 'react-redux';
 import { store}  from '../store';
+import {ConnectedLogin} from './Login';
 import {ConnectedDashboard} from './Dashboard';
 import {ConnectedNavigation} from './Navigation';
 import { ConnectedTaskDetail  } from './TaskDetail';
@@ -22,6 +23,7 @@ export const Main = () => (
         <Provider store={store}>
             <div>
                 < ConnectedNavigation />
+                <Route exact path="/" component={ConnectedLogin}/>
                 <Route exact path="/dashboard" render={RouteGuard(ConnectedDashboard)}/>
                 <Route exact path="/task/:id" render={RouteGuard(ConnectedTaskDetail)}/>
             </div>
