@@ -9,7 +9,8 @@
     "dev": "webpack-dev-server --open",
     "initialize": "babel-node src/server/initialize-db",
     "server": "babel-node src/server/server",
-    "server-test": "babel-node src/server/server.spec"
+    "server-test": "babel-node src/server/server.spec",
+    "start-dev": "concurrently \"npm run server\" \"npm run dev\""
   },
   "keywords": [],
   "author": "",
@@ -22,6 +23,7 @@
     "@babel/register": "^7.9.0",
     "babel-loader": "^8.1.0",
     "body-parser": "^1.19.0",
+    "concurrently": "^5.1.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "history": "^4.10.1",
