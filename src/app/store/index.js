@@ -10,7 +10,7 @@ import { TaskList } from '../components/TaskList';
 
 export const store = createStore(
     combineReducers({
-        session(session = defaultState.session){
+        session(session = defaultState.session || {}){
             return session;
         },
         tasks(tasks = defaultState.tasks, action){

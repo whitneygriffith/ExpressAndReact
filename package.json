@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "md5": "^2.2.1",
     "react-router": "^5.1.2"
   }
 }
