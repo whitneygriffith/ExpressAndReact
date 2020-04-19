@@ -2,7 +2,7 @@ import React from 'react';
 import * as mutations from '../store/mutations';
 import { connect } from 'react-redux';
 
-const LoginComponent = (authenticateUser) => {
+const LoginComponent = ({authenticateUser}) => {
     return <div>
         <h2>
             Please login
@@ -24,5 +24,6 @@ const mapDispatchToProps = (dispatch) => ({
         let password = e.target['password'].value; 
         dispatch(mutatations.requestAuthenticateUser(username, password));
     }
-})
+});
+
 export const ConnectedLogin = connect(mapStateToProps, mapDispatchToProps)(LoginComponent);
