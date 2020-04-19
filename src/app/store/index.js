@@ -13,6 +13,8 @@ export const store = createStore(
         session(userSession = defaultState.session || {},action){
             let {type, authenticated, session} = action;
             switch (type) {
+                case mutations.SET_STATE:
+                    return {...userSession, id:action.state.session.id}
                 case mutations.REQUEST_AUTHENTICATED_USER:
                     return {...userSession, authenticated:mutations.AUTHENTICATING};
                 case mutations.PROCESSING_AUTHTENTICATED_USER:
@@ -22,8 +24,10 @@ export const store = createStore(
             }
             
         },
-        tasks(tasks = defaultState.tasks, action){
+        tasks(tasks = [], action){
             switch(action.type){
+                case mutations.SET_STATE:
+                    return action.state.tasks
                 case mutations.CREATE_TASK:
                     return [ ...tasks, {
                         id: action.taskID,
@@ -53,14 +57,26 @@ export const store = createStore(
              }
              return tasks;
          },
-         comments(comments = defaultState.comments){
-             return  comments;
+         comments(comments = defaultState.comments, action){
+            switch (action.type) {
+                case mutations.SET_STATE:
+                    return action.state.comments;
+            }
+            return  comments;
          },
-         groups(groups =  defaultState.groups){
-             return groups;
+         groups(groups =  [], action){
+            switch (action.type) {
+                case mutations.SET_STATE:
+                    return action.state.groups;
+            }
+            return groups;
          },
-         users(groups = defaultState.groups){
-             return groups; 
+         users(users = [], action){
+            switch (action.type) {
+                case mutations.SET_STATE:
+                    return action.state.users;
+            }
+            return users; 
          }
     }),
     applyMiddleware(createLogger(), sagaMiddleware)
