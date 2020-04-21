@@ -6,7 +6,7 @@
 
 `npm install`
 
-`npm run dev`
+`npm run start-dev` starts both server and frontend 
 
 ### Frontend 
 
