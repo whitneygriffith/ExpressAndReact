@@ -20,6 +20,10 @@
 
 ![server](./docs/images/server.png)
 
+### Next Steps  
+
+- [ ] [Containerize App using Paketo Buildpacks](https://link.medium.com/uAgsc9IMR5)
+
 ### Bugs
 
 - [x] `WARNING in ./src/app/store/sagas.js 52:6-13 "export 'default' (imported as'history') was not found in './history' @ ./src/app/store/index.js @ ./src/app/index.jsx`
