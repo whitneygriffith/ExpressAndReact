@@ -2,7 +2,7 @@ import {take, put, select } from 'redux-saga/effects';
 import uuid  from 'uuid';
 import axios from 'axios';
 
-import history from './history';
+import { history } from './history';
 
 import * as mutations from './mutations';
 

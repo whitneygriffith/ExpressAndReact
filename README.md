@@ -22,4 +22,4 @@
 
 ### Bugs
 
-- [ ] `WARNING in ./src/app/store/sagas.js 52:6-13 "export 'default' (imported as'history') was not found in './history' @ ./src/app/store/index.js @ ./src/app/index.jsx`
+- [x] `WARNING in ./src/app/store/sagas.js 52:6-13 "export 'default' (imported as'history') was not found in './history' @ ./src/app/store/index.js @ ./src/app/index.jsx`

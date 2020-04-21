@@ -57,26 +57,12 @@ export const store = createStore(
              }
              return tasks;
          },
-         comments(comments = defaultState.comments, action){
-            switch (action.type) {
-                case mutations.SET_STATE:
-                    return action.state.comments;
-            }
-            return  comments;
-         },
          groups(groups =  [], action){
             switch (action.type) {
                 case mutations.SET_STATE:
                     return action.state.groups;
             }
             return groups;
-         },
-         users(users = [], action){
-            switch (action.type) {
-                case mutations.SET_STATE:
-                    return action.state.users;
-            }
-            return users; 
          }
     }),
     applyMiddleware(createLogger(), sagaMiddleware)
