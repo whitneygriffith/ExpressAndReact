@@ -2,6 +2,9 @@
 
 [Pluralsight Course](https://app.pluralsight.com/library/courses/react-express-full-stack-app-building/table-of-contents)
 
+### Set up
+
+Configure your local mongodb server and point to it from the server. 
 ### Starting application with webpack
 
 `npm install`
